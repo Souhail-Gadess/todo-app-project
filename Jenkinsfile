@@ -12,21 +12,21 @@ pipeline {
         stage('Install dépendances Node') {
             steps {
                 echo 'Installation des dépendances Node.js...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         
         stage('Tests') {
             steps {
                 echo 'Exécution des tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
         
         stage('Build Docker') {
             steps {
                 echo 'Construction de l\'image Docker...'
-                sh 'docker build -t todo-app .'
+                bat 'docker build -t todo-app .'
             }
         }
     }
